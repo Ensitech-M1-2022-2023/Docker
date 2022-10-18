@@ -7,9 +7,9 @@ jobs:
     steps:
       - name: clone
         run: git clone https://github.com/Ensitech-M1-2022-2023/Docker.git
-      - name: checkout
-        run: git checkout Nathan-GASC
       - name: cd
         run: cd ./Docker
+      - name: checkout
+        run: git checkout Nathan-GASC
       - name: build
         run: docker build . -t ${{ secrets.DOCKER_HUB_USERNAME }}/simplewhale:latest
