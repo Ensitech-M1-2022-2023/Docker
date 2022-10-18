@@ -5,8 +5,9 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: clone
-        run: git clone https://github.com/Ensitech-M1-2022-2023/Docker.git
+      - uses: actions/checkout@v3
+        with:
+          ref: my-branch
       - name: cd
         run: cd ./Docker
       - name: checkout
