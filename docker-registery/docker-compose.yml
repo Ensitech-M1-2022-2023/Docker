@@ -1,0 +1,21 @@
+version: '3'
+services:
+  registry-ui:
+    image: joxit/docker-registry-ui:static
+    environment:
+      REGISTRY_URL: http://registery:5000
+      REGISTRY_TITLE: local9000
+    ports:
+      - 9001:80
+    networks:
+      - registry-network
+
+  registery:
+    image: registry:2
+    ports:
+      - "9000:5000"
+    networks:
+      - registry-network
+
+networks:
+  registry-network:
