@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: clone
-        run: git clone git@github.com:Ensitech-M1-2022-2023/Docker.git
+        run: git clone https://github.com/Ensitech-M1-2022-2023/Docker.git
       - name: checkout
         run: git checkout Nathan-GASC
       - name: cd
