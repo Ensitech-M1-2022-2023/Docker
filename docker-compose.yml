@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+
+  website:
+    image: php:apache
+    restart: always
+    ports:
+      - 8080:80
+    depends_on:
+      - simple_api
+    environment:
+      USERNAME : toto
+      PASSWORD: python
+    volumes:
+      - ./website/:/var/www/html/
+    networks:
+      - project
+
+  simple_api:
+    build: ./simple_api
+    restart: always
+    ports:
+      - 5000:5000
+    volumes:
+      - ./simple_api/student_age.json:/data/student_age.json
+    networks:
+      - project
+
+networks:
+  project:
