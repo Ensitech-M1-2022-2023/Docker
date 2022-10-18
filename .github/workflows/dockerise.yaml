@@ -1,6 +1,10 @@
 name: Dockerise
 run-name: ${{ github.actor }} is building a docker image 🚀
 on: [push]
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - runs:
+          using: 'docker'
+          image: 'Dockerfile'
