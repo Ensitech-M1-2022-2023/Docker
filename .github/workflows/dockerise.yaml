@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ls
-        uses: ls
+        run: ls
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
