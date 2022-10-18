@@ -9,7 +9,7 @@ jobs:
         with:
           ref: Nathan-GASC
       - name: ls
-        run: ls .
+        run: ls -l ./static-website-example
       - name: build
         run: docker build . -t ${{ secrets.DOCKER_HUB_USERNAME }}/simplewhale:latest
       - name: docker-hub login
